@@ -1,5 +1,4 @@
 from optparse import make_option
-import time
 
 from django.core.management.base import BaseCommand
 
@@ -20,4 +19,4 @@ class Command(BaseCommand):
     )
 
     def handle(self, *args, **kw):
-        statsd.timing(kw.get('key'), time.time())
+        statsd.incr(kw.get('key'))
