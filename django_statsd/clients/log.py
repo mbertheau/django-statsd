@@ -23,3 +23,7 @@ class StatsClient(StatsClient):
     def gauge(self, stat, value, rate=1):
         """Set a gauge value."""
         log.info('Gauge: %s, %s, %s' % (stat, value, rate))
+
+    def duration(self, stat, value, rate=1):
+        """Set a duration value."""
+        log.info('Duration: %s, %s, %s' % (stat, value, rate))
